@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>閱掑浘璋冭壊鍙傛暟鐢熸垚鍣?/title>
+    <title>&#x9192;&#x56FE;&#x8C03;&#x8272;&#x53C2;&#x6570;&#x751F;&#x6210;&#x5668;</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -11,19 +11,19 @@
       <section class="panel workspace">
         <div class="topbar">
           <div>
-            <p class="eyebrow">閱掑浘鍙傛暟鍔╂墜</p>
-            <h1>涓婁紶鐓х墖锛岀敓鎴愬彲鐓ф惉鐨勮皟鑹插弬鏁?/h1>
+            <p class="eyebrow">&#x9192;&#x56FE;&#x53C2;&#x6570;&#x52A9;&#x624B;</p>
+            <h1>&#x4E0A;&#x4F20;&#x7167;&#x7247;&#xFF0C;&#x751F;&#x6210;&#x53EF;&#x7167;&#x642C;&#x7684;&#x8C03;&#x8272;&#x53C2;&#x6570;</h1>
           </div>
-          <button class="ghost" id="resetBtn" type="button">閲嶇疆</button>
+          <button class="ghost" id="resetBtn" type="button">&#x91CD;&#x7F6E;</button>
         </div>
 
         <label class="dropzone" id="dropzone">
           <input id="fileInput" type="file" accept="image/*" />
           <span class="uploadIcon">+</span>
-          <strong>鏀惧叆涓€寮犵収鐗?/strong>
-          <small>鏈湴鍒嗘瀽鍥剧墖锛屼笉涓婁紶锛涙敮鎸?JPG銆丳NG銆乄ebP</small>
+          <strong>&#x653E;&#x5165;&#x4E00;&#x5F20;&#x7167;&#x7247;</strong>
+          <small>&#x672C;&#x5730;&#x5206;&#x6790;&#x56FE;&#x7247;&#xFF0C;&#x4E0D;&#x4E0A;&#x4F20;&#xFF1B;&#x652F;&#x6301; JPG&#x3001;PNG&#x3001;WebP</small>
         </label>
-        <button class="sampleBtn" id="sampleBtn" type="button">浣跨敤绀轰緥鐓х墖</button>
+        <button class="sampleBtn" id="sampleBtn" type="button">&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#x7167;&#x7247;</button>
 
         <div class="previewWrap hidden" id="previewWrap">
           <canvas id="previewCanvas" width="720" height="960"></canvas>
@@ -32,29 +32,29 @@
 
         <div class="controls">
           <label>
-            鐓х墖绫诲瀷
+            &#x7167;&#x7247;&#x7C7B;&#x578B;
             <select id="sceneSelect">
-              <option value="auto">鑷姩鍒ゆ柇</option>
-              <option value="portrait">浜哄儚/鑷媿</option>
-              <option value="landscape">椋庢櫙/鏃呰</option>
-              <option value="food">椋熺墿/鎺㈠簵</option>
-              <option value="night">澶滄櫙/姘涘洿</option>
-              <option value="city">鍩庡競/琛楁媿</option>
+              <option value="auto">&#x81EA;&#x52A8;&#x5224;&#x65AD;</option>
+              <option value="portrait">&#x4EBA;&#x50CF;/&#x81EA;&#x62CD;</option>
+              <option value="landscape">&#x98CE;&#x666F;/&#x65C5;&#x884C;</option>
+              <option value="food">&#x98DF;&#x7269;/&#x63A2;&#x5E97;</option>
+              <option value="night">&#x591C;&#x666F;/&#x6C1B;&#x56F4;</option>
+              <option value="city">&#x57CE;&#x5E02;/&#x8857;&#x62CD;</option>
             </select>
           </label>
           <label>
-            鎯宠椋庢牸
+            &#x60F3;&#x8981;&#x98CE;&#x683C;
             <select id="styleSelect">
-              <option value="auto">鑷姩鎺ㄨ崘</option>
-              <option value="cream">濂舵补鑳剁墖</option>
-              <option value="clean">娓呴€忓喎鐧?/option>
-              <option value="japan">鏃ョ郴閫氶€?/option>
-              <option value="night">澶滄櫙姘涘洿</option>
-              <option value="food">椋熺墿鏆栬皟</option>
+              <option value="auto">&#x81EA;&#x52A8;&#x63A8;&#x8350;</option>
+              <option value="cream">&#x5976;&#x6CB9;&#x80F6;&#x7247;</option>
+              <option value="clean">&#x6E05;&#x900F;&#x51B7;&#x767D;</option>
+              <option value="japan">&#x65E5;&#x7CFB;&#x901A;&#x900F;</option>
+              <option value="night">&#x591C;&#x666F;&#x6C1B;&#x56F4;</option>
+              <option value="food">&#x98DF;&#x7269;&#x6696;&#x8C03;</option>
             </select>
           </label>
           <label>
-            寮哄害
+            &#x5F3A;&#x5EA6;
             <input id="strengthRange" type="range" min="70" max="130" value="100" />
           </label>
         </div>
@@ -62,31 +62,31 @@
 
       <section class="panel results">
         <div class="sectionTitle">
-          <p class="eyebrow">鎺ㄨ崘缁撴灉</p>
-          <h2 id="resultTitle">鍏堜笂浼犵収鐗?/h2>
+          <p class="eyebrow">&#x63A8;&#x8350;&#x7ED3;&#x679C;</p>
+          <h2 id="resultTitle">&#x5148;&#x4E0A;&#x4F20;&#x7167;&#x7247;</h2>
         </div>
 
         <div class="analysisCards" id="analysisCards">
-          <div><b>鏄庢殫</b><span>-</span></div>
-          <div><b>鍐锋殩</b><span>-</span></div>
-          <div><b>楗卞拰</b><span>-</span></div>
+          <div><b>&#x660E;&#x6697;</b><span>-</span></div>
+          <div><b>&#x51B7;&#x6696;</b><span>-</span></div>
+          <div><b>&#x9971;&#x548C;</b><span>-</span></div>
         </div>
 
         <div class="resultPreview hidden" id="resultPreview">
           <figure>
             <canvas id="beforeCanvas" width="1080" height="1440"></canvas>
-            <figcaption>鍘熷浘</figcaption>
+            <figcaption>&#x539F;&#x56FE;</figcaption>
           </figure>
           <figure>
             <canvas id="afterCanvas" width="1080" height="1440"></canvas>
-            <figcaption>鏍峰浘</figcaption>
+            <figcaption>&#x6837;&#x56FE;</figcaption>
           </figure>
         </div>
 
         <div class="styleSamples hidden" id="styleSamples">
           <div class="sampleTitle">
-            <h3>姣忕椋庢牸鍙傝€冩牱鍥?/h3>
-            <p>鍚屼竴寮犵収鐗囧垎鍒鐢ㄤ簲绉嶉啋鍥惧弬鏁帮紝鐐瑰崱鐗囧彲鍒囨崲鎺ㄨ崘椋庢牸銆?/p>
+            <h3>&#x6BCF;&#x79CD;&#x98CE;&#x683C;&#x53C2;&#x8003;&#x6837;&#x56FE;</h3>
+            <p>&#x540C;&#x4E00;&#x5F20;&#x7167;&#x7247;&#x5206;&#x522B;&#x5957;&#x7528;&#x4E94;&#x79CD;&#x9192;&#x56FE;&#x53C2;&#x6570;&#xFF0C;&#x70B9;&#x5361;&#x7247;&#x53EF;&#x5207;&#x6362;&#x63A8;&#x8350;&#x98CE;&#x683C;&#x3002;</p>
           </div>
           <div class="sampleGrid" id="sampleGrid"></div>
         </div>
@@ -94,14 +94,14 @@
         <div class="recipeList" id="recipeList"></div>
 
         <div class="searchBox">
-          <h3>鍘诲钩鍙版壘鍚屾鏃跺彲鎼?/h3>
+          <h3>&#x53BB;&#x5E73;&#x53F0;&#x627E;&#x540C;&#x6B3E;&#x65F6;&#x53EF;&#x641C;</h3>
           <div class="tags" id="searchTags"></div>
           <div class="searchActions">
-            <a id="searchXhs" target="_blank" rel="noreferrer">灏忕孩涔︽悳鍚屾</a>
-            <a id="searchDouyin" target="_blank" rel="noreferrer">鎶栭煶鎼滃悓娆?/a>
-            <a id="searchWeb" target="_blank" rel="noreferrer">鍏ㄧ綉鎼滃弬鏁?/a>
+            <a id="searchXhs" target="_blank" rel="noreferrer">&#x5C0F;&#x7EA2;&#x4E66;&#x641C;&#x540C;&#x6B3E;</a>
+            <a id="searchDouyin" target="_blank" rel="noreferrer">&#x6296;&#x97F3;&#x641C;&#x540C;&#x6B3E;</a>
+            <a id="searchWeb" target="_blank" rel="noreferrer">&#x5168;&#x7F51;&#x641C;&#x53C2;&#x6570;</a>
           </div>
-          <p>璇存槑锛氭寜閽細甯︾潃浣犵殑鎺ㄨ崘椋庢牸鑱旂綉鎼滅储鍏紑缁撴灉锛涘钩鍙扮湡瀹炵偣璧?鏀惰棌鎺掑簭閫氬父闇€瑕佺櫥褰曪紝鏆備笉鍦ㄩ〉闈㈠唴鎶撳彇銆?/p>
+          <p>&#x8BF4;&#x660E;&#xFF1A;&#x6309;&#x94AE;&#x4F1A;&#x5E26;&#x7740;&#x4F60;&#x7684;&#x63A8;&#x8350;&#x98CE;&#x683C;&#x8054;&#x7F51;&#x641C;&#x7D22;&#x516C;&#x5F00;&#x7ED3;&#x679C;&#xFF1B;&#x5E73;&#x53F0;&#x771F;&#x5B9E;&#x70B9;&#x8D5E;/&#x6536;&#x85CF;&#x6392;&#x5E8F;&#x901A;&#x5E38;&#x9700;&#x8981;&#x767B;&#x5F55;&#xFF0C;&#x6682;&#x4E0D;&#x5728;&#x9875;&#x9762;&#x5185;&#x6293;&#x53D6;&#x3002;</p>
         </div>
       </section>
     </main>
@@ -113,7 +113,7 @@
             <h3></h3>
             <p></p>
           </div>
-          <button type="button">澶嶅埗</button>
+          <button type="button">&#x590D;&#x5236;</button>
         </div>
         <div class="params"></div>
       </article>
