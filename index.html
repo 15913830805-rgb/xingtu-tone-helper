@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>閱掑浘璋冭壊鍙傛暟鐢熸垚鍣?/title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel workspace">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">閱掑浘鍙傛暟鍔╂墜</p>
+            <h1>涓婁紶鐓х墖锛岀敓鎴愬彲鐓ф惉鐨勮皟鑹插弬鏁?/h1>
+          </div>
+          <button class="ghost" id="resetBtn" type="button">閲嶇疆</button>
+        </div>
+
+        <label class="dropzone" id="dropzone">
+          <input id="fileInput" type="file" accept="image/*" />
+          <span class="uploadIcon">+</span>
+          <strong>鏀惧叆涓€寮犵収鐗?/strong>
+          <small>鏈湴鍒嗘瀽鍥剧墖锛屼笉涓婁紶锛涙敮鎸?JPG銆丳NG銆乄ebP</small>
+        </label>
+        <button class="sampleBtn" id="sampleBtn" type="button">浣跨敤绀轰緥鐓х墖</button>
+
+        <div class="previewWrap hidden" id="previewWrap">
+          <canvas id="previewCanvas" width="720" height="960"></canvas>
+          <div class="imageInfo" id="imageInfo"></div>
+        </div>
+
+        <div class="controls">
+          <label>
+            鐓х墖绫诲瀷
+            <select id="sceneSelect">
+              <option value="auto">鑷姩鍒ゆ柇</option>
+              <option value="portrait">浜哄儚/鑷媿</option>
+              <option value="landscape">椋庢櫙/鏃呰</option>
+              <option value="food">椋熺墿/鎺㈠簵</option>
+              <option value="night">澶滄櫙/姘涘洿</option>
+              <option value="city">鍩庡競/琛楁媿</option>
+            </select>
+          </label>
+          <label>
+            鎯宠椋庢牸
+            <select id="styleSelect">
+              <option value="auto">鑷姩鎺ㄨ崘</option>
+              <option value="cream">濂舵补鑳剁墖</option>
+              <option value="clean">娓呴€忓喎鐧?/option>
+              <option value="japan">鏃ョ郴閫氶€?/option>
+              <option value="night">澶滄櫙姘涘洿</option>
+              <option value="food">椋熺墿鏆栬皟</option>
+            </select>
+          </label>
+          <label>
+            寮哄害
+            <input id="strengthRange" type="range" min="70" max="130" value="100" />
+          </label>
+        </div>
+      </section>
+
+      <section class="panel results">
+        <div class="sectionTitle">
+          <p class="eyebrow">鎺ㄨ崘缁撴灉</p>
+          <h2 id="resultTitle">鍏堜笂浼犵収鐗?/h2>
+        </div>
+
+        <div class="analysisCards" id="analysisCards">
+          <div><b>鏄庢殫</b><span>-</span></div>
+          <div><b>鍐锋殩</b><span>-</span></div>
+          <div><b>楗卞拰</b><span>-</span></div>
+        </div>
+
+        <div class="resultPreview hidden" id="resultPreview">
+          <figure>
+            <canvas id="beforeCanvas" width="1080" height="1440"></canvas>
+            <figcaption>鍘熷浘</figcaption>
+          </figure>
+          <figure>
+            <canvas id="afterCanvas" width="1080" height="1440"></canvas>
+            <figcaption>鏍峰浘</figcaption>
+          </figure>
+        </div>
+
+        <div class="styleSamples hidden" id="styleSamples">
+          <div class="sampleTitle">
+            <h3>姣忕椋庢牸鍙傝€冩牱鍥?/h3>
+            <p>鍚屼竴寮犵収鐗囧垎鍒鐢ㄤ簲绉嶉啋鍥惧弬鏁帮紝鐐瑰崱鐗囧彲鍒囨崲鎺ㄨ崘椋庢牸銆?/p>
+          </div>
+          <div class="sampleGrid" id="sampleGrid"></div>
+        </div>
+
+        <div class="recipeList" id="recipeList"></div>
+
+        <div class="searchBox">
+          <h3>鍘诲钩鍙版壘鍚屾鏃跺彲鎼?/h3>
+          <div class="tags" id="searchTags"></div>
+          <div class="searchActions">
+            <a id="searchXhs" target="_blank" rel="noreferrer">灏忕孩涔︽悳鍚屾</a>
+            <a id="searchDouyin" target="_blank" rel="noreferrer">鎶栭煶鎼滃悓娆?/a>
+            <a id="searchWeb" target="_blank" rel="noreferrer">鍏ㄧ綉鎼滃弬鏁?/a>
+          </div>
+          <p>璇存槑锛氭寜閽細甯︾潃浣犵殑鎺ㄨ崘椋庢牸鑱旂綉鎼滅储鍏紑缁撴灉锛涘钩鍙扮湡瀹炵偣璧?鏀惰棌鎺掑簭閫氬父闇€瑕佺櫥褰曪紝鏆備笉鍦ㄩ〉闈㈠唴鎶撳彇銆?/p>
+        </div>
+      </section>
+    </main>
+
+    <template id="recipeTemplate">
+      <article class="recipe">
+        <div class="recipeHead">
+          <div>
+            <h3></h3>
+            <p></p>
+          </div>
+          <button type="button">澶嶅埗</button>
+        </div>
+        <div class="params"></div>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
