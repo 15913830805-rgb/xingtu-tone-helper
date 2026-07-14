@@ -27,108 +27,108 @@ let currentStats = null;
 
 const baseRecipes = {
   cream: {
-    name: "濂舵补鑳剁墖",
-    note: "閫傚悎浜哄儚銆佸挅鍟″簵銆侀槾澶╁鍐咃紝鑲よ壊鏌斿拰涓嶈剰銆?,
+    name: "\u5976\u6CB9\u80F6\u7247",
+    note: "\u9002\u5408\u4EBA\u50CF\u3001\u5496\u5561\u5E97\u3001\u9634\u5929\u5BA4\u5185\uFF0C\u80A4\u8272\u67D4\u548C\u4E0D\u810F\u3002",
     scene: ["portrait", "food", "city"],
     params: {
-      浜害: 6,
-      瀵规瘮搴? -12,
-      楗卞拰搴? -6,
-      閿愬寲: 12,
-      缁撴瀯: -8,
-      楂樺厜: -22,
-      闃村奖: 18,
-      鑹叉俯: 8,
-      鑹茶皟: 3,
-      瑜壊: 18,
-      棰楃矑: 12,
-      鏆楄: 8,
+      \u4EAE\u5EA6: 6,
+      \u5BF9\u6BD4\u5EA6: -12,
+      \u9971\u548C\u5EA6: -6,
+      \u9510\u5316: 12,
+      \u7ED3\u6784: -8,
+      \u9AD8\u5149: -22,
+      \u9634\u5F71: 18,
+      \u8272\u6E29: 8,
+      \u8272\u8C03: 3,
+      \u892A\u8272: 18,
+      \u9897\u7C92: 12,
+      \u6697\u89D2: 8,
     },
   },
   clean: {
-    name: "娓呴€忓喎鐧?,
-    note: "閫傚悎鑷媿銆佺櫧澧欍€佽摑澶╋紝鐢婚潰骞插噣鍋忎寒銆?,
+    name: "\u6E05\u900F\u51B7\u767D",
+    note: "\u9002\u5408\u81EA\u62CD\u3001\u767D\u5899\u3001\u84DD\u5929\uFF0C\u753B\u9762\u5E72\u51C0\u504F\u4EAE\u3002",
     scene: ["portrait", "landscape"],
     params: {
-      浜害: 12,
-      瀵规瘮搴? -6,
-      楗卞拰搴? -4,
-      閿愬寲: 18,
-      缁撴瀯: 4,
-      楂樺厜: -18,
-      闃村奖: 22,
-      鑹叉俯: -8,
-      鑹茶皟: 5,
-      瑜壊: 6,
-      棰楃矑: 0,
-      鏆楄: 0,
+      \u4EAE\u5EA6: 12,
+      \u5BF9\u6BD4\u5EA6: -6,
+      \u9971\u548C\u5EA6: -4,
+      \u9510\u5316: 18,
+      \u7ED3\u6784: 4,
+      \u9AD8\u5149: -18,
+      \u9634\u5F71: 22,
+      \u8272\u6E29: -8,
+      \u8272\u8C03: 5,
+      \u892A\u8272: 6,
+      \u9897\u7C92: 0,
+      \u6697\u89D2: 0,
     },
   },
   japan: {
-    name: "鏃ョ郴閫氶€?,
-    note: "閫傚悎鏃呰銆佽鎷嶃€佽嚜鐒跺厜锛岄鑹茶交浣嗕笉鐏般€?,
+    name: "\u65E5\u7CFB\u901A\u900F",
+    note: "\u9002\u5408\u65C5\u884C\u3001\u8857\u62CD\u3001\u81EA\u7136\u5149\uFF0C\u989C\u8272\u8F7B\u4F46\u4E0D\u7070\u3002",
     scene: ["landscape", "city", "portrait"],
     params: {
-      浜害: 10,
-      瀵规瘮搴? -10,
-      楗卞拰搴? 8,
-      閿愬寲: 10,
-      缁撴瀯: -4,
-      楂樺厜: -28,
-      闃村奖: 26,
-      鑹叉俯: 4,
-      鑹茶皟: -2,
-      瑜壊: 10,
-      棰楃矑: 5,
-      鏆楄: 0,
+      \u4EAE\u5EA6: 10,
+      \u5BF9\u6BD4\u5EA6: -10,
+      \u9971\u548C\u5EA6: 8,
+      \u9510\u5316: 10,
+      \u7ED3\u6784: -4,
+      \u9AD8\u5149: -28,
+      \u9634\u5F71: 26,
+      \u8272\u6E29: 4,
+      \u8272\u8C03: -2,
+      \u892A\u8272: 10,
+      \u9897\u7C92: 5,
+      \u6697\u89D2: 0,
     },
   },
   night: {
-    name: "澶滄櫙姘涘洿",
-    note: "閫傚悎璺伅銆佽溅娴併€侀洦澶滐紝鍘嬩綇楂樺厜锛屼繚鐣欑伅鍏夊眰娆°€?,
+    name: "\u591C\u666F\u6C1B\u56F4",
+    note: "\u9002\u5408\u8DEF\u706F\u3001\u8F66\u6D41\u3001\u96E8\u591C\uFF0C\u538B\u4F4F\u9AD8\u5149\uFF0C\u4FDD\u7559\u706F\u5149\u5C42\u6B21\u3002",
     scene: ["night", "city"],
     params: {
-      浜害: -4,
-      瀵规瘮搴? 16,
-      楗卞拰搴? 10,
-      閿愬寲: 22,
-      缁撴瀯: 12,
-      楂樺厜: -42,
-      闃村奖: 8,
-      鑹叉俯: -6,
-      鑹茶皟: 4,
-      瑜壊: 4,
-      棰楃矑: 10,
-      鏆楄: 18,
+      \u4EAE\u5EA6: -4,
+      \u5BF9\u6BD4\u5EA6: 16,
+      \u9971\u548C\u5EA6: 10,
+      \u9510\u5316: 22,
+      \u7ED3\u6784: 12,
+      \u9AD8\u5149: -42,
+      \u9634\u5F71: 8,
+      \u8272\u6E29: -6,
+      \u8272\u8C03: 4,
+      \u892A\u8272: 4,
+      \u9897\u7C92: 10,
+      \u6697\u89D2: 18,
     },
   },
   food: {
-    name: "椋熺墿鏆栬皟",
-    note: "閫傚悎鐢滃搧銆佺伀閿呫€佸挅鍟★紝鎻愰娆蹭絾涓嶈繃榛勩€?,
+    name: "\u98DF\u7269\u6696\u8C03",
+    note: "\u9002\u5408\u751C\u54C1\u3001\u706B\u9505\u3001\u5496\u5561\uFF0C\u63D0\u98DF\u6B32\u4F46\u4E0D\u8FC7\u9EC4\u3002",
     scene: ["food"],
     params: {
-      浜害: 8,
-      瀵规瘮搴? 8,
-      楗卞拰搴? 14,
-      閿愬寲: 16,
-      缁撴瀯: 8,
-      楂樺厜: -14,
-      闃村奖: 14,
-      鑹叉俯: 10,
-      鑹茶皟: -2,
-      瑜壊: 0,
-      棰楃矑: 0,
-      鏆楄: 4,
+      \u4EAE\u5EA6: 8,
+      \u5BF9\u6BD4\u5EA6: 8,
+      \u9971\u548C\u5EA6: 14,
+      \u9510\u5316: 16,
+      \u7ED3\u6784: 8,
+      \u9AD8\u5149: -14,
+      \u9634\u5F71: 14,
+      \u8272\u6E29: 10,
+      \u8272\u8C03: -2,
+      \u892A\u8272: 0,
+      \u9897\u7C92: 0,
+      \u6697\u89D2: 4,
     },
   },
 };
 
 const tagsByStyle = {
-  cream: ["閱掑浘 濂舵补鑳剁墖 鍙傛暟", "灏忕孩涔?鍚屾濂舵补鎰熻皟鑹?, "鎶栭煶 姘涘洿鎰熻皟鑹?閱掑浘"],
-  clean: ["閱掑浘 娓呴€忓喎鐧?鍙傛暟", "鑷媿鍐风櫧鐨皟鑹?, "灏忕孩涔?閫氶€忔劅淇浘"],
-  japan: ["閱掑浘 鏃ョ郴閫氶€?鍙傛暟", "鏃呰鐓х墖閱掑浘璋冭壊", "灏忕孩涔?鏃ョ郴鑳剁墖鍙傛暟"],
-  night: ["閱掑浘 澶滄櫙姘涘洿 鍙傛暟", "闆ㄥ鐏厜璋冭壊鏁欑▼", "鎶栭煶 澶滄櫙鐢靛奖鎰熻皟鑹?],
-  food: ["閱掑浘 椋熺墿璋冭壊 鍙傛暟", "鎺㈠簵鐓х墖閱掑浘鍙傛暟", "灏忕孩涔?缇庨鏆栬皟婊ら暅"],
+  cream: ["\u9192\u56FE \u5976\u6CB9\u80F6\u7247 \u53C2\u6570", "\u5C0F\u7EA2\u4E66 \u540C\u6B3E\u5976\u6CB9\u611F\u8C03\u8272", "\u6296\u97F3 \u6C1B\u56F4\u611F\u8C03\u8272 \u9192\u56FE"],
+  clean: ["\u9192\u56FE \u6E05\u900F\u51B7\u767D \u53C2\u6570", "\u81EA\u62CD\u51B7\u767D\u76AE\u8C03\u8272", "\u5C0F\u7EA2\u4E66 \u901A\u900F\u611F\u4FEE\u56FE"],
+  japan: ["\u9192\u56FE \u65E5\u7CFB\u901A\u900F \u53C2\u6570", "\u65C5\u884C\u7167\u7247\u9192\u56FE\u8C03\u8272", "\u5C0F\u7EA2\u4E66 \u65E5\u7CFB\u80F6\u7247\u53C2\u6570"],
+  night: ["\u9192\u56FE \u591C\u666F\u6C1B\u56F4 \u53C2\u6570", "\u96E8\u591C\u706F\u5149\u8C03\u8272\u6559\u7A0B", "\u6296\u97F3 \u591C\u666F\u7535\u5F71\u611F\u8C03\u8272"],
+  food: ["\u9192\u56FE \u98DF\u7269\u8C03\u8272 \u53C2\u6570", "\u63A2\u5E97\u7167\u7247\u9192\u56FE\u53C2\u6570", "\u5C0F\u7EA2\u4E66 \u7F8E\u98DF\u6696\u8C03\u6EE4\u955C"],
 };
 
 function clamp(value, min = -100, max = 100) {
@@ -158,7 +158,7 @@ function renderPreview(img) {
   previewWrap.classList.remove("hidden");
   dropzone.classList.add("hidden");
   sampleBtn.classList.add("hidden");
-  imageInfo.textContent = `${img.width}脳${img.height}锛屽凡瀹屾垚鏈湴鍙栨牱鍒嗘瀽`;
+  imageInfo.textContent = `${img.width}\u00D7${img.height}\uFF0C\u5DF2\u5B8C\u6210\u672C\u5730\u53D6\u6837\u5206\u6790`;
 }
 
 function loadImageElement(img) {
@@ -259,9 +259,9 @@ function analyzeImage(img) {
     warmth,
     scene,
     labels: {
-      brightness: brightness < 0.38 ? "鍋忔殫" : brightness > 0.68 ? "鍋忎寒" : "姝ｅ父",
-      warmth: warmth > 0.06 ? "鍋忔殩" : warmth < -0.04 ? "鍋忓喎" : "涓€?,
-      saturation: saturation < 0.22 ? "鍋忕伆" : saturation > 0.46 ? "鍋忔祿" : "閫備腑",
+      brightness: brightness < 0.38 ? "\u504F\u6697" : brightness > 0.68 ? "\u504F\u4EAE" : "\u6B63\u5E38",
+      warmth: warmth > 0.06 ? "\u504F\u6696" : warmth < -0.04 ? "\u504F\u51B7" : "\u4E2D\u6027",
+      saturation: saturation < 0.22 ? "\u504F\u7070" : saturation > 0.46 ? "\u504F\u6D53" : "\u9002\u4E2D",
     },
   };
 }
@@ -272,26 +272,26 @@ function adjustedRecipe(key, stats, strength, forcedScene) {
   const scene = forcedScene === "auto" ? stats.scene : forcedScene;
 
   if (stats.brightness < 0.38) {
-    params.浜害 += 8;
-    params.闃村奖 += 10;
-    params.楂樺厜 += 4;
+    params.\u4EAE\u5EA6 += 8;
+    params.\u9634\u5F71 += 10;
+    params.\u9AD8\u5149 += 4;
   }
   if (stats.brightness > 0.68) {
-    params.浜害 -= 8;
-    params.楂樺厜 -= 12;
-    params.瀵规瘮搴?+= 4;
+    params.\u4EAE\u5EA6 -= 8;
+    params.\u9AD8\u5149 -= 12;
+    params.\u5BF9\u6BD4\u5EA6 += 4;
   }
-  if (stats.saturation > 0.46) params.楗卞拰搴?-= 10;
-  if (stats.saturation < 0.22) params.楗卞拰搴?+= 8;
-  if (stats.warmth > 0.06 && key !== "food") params.鑹叉俯 -= 8;
-  if (stats.warmth < -0.04 && key !== "clean" && key !== "night") params.鑹叉俯 += 6;
+  if (stats.saturation > 0.46) params.\u9971\u548C\u5EA6 -= 10;
+  if (stats.saturation < 0.22) params.\u9971\u548C\u5EA6 += 8;
+  if (stats.warmth > 0.06 && key !== "food") params.\u8272\u6E29 -= 8;
+  if (stats.warmth < -0.04 && key !== "clean" && key !== "night") params.\u8272\u6E29 += 6;
   if (scene === "portrait") {
-    params.缁撴瀯 -= 8;
-    params.閿愬寲 = Math.min(params.閿愬寲, 16);
+    params.\u7ED3\u6784 -= 8;
+    params.\u9510\u5316 = Math.min(params.\u9510\u5316, 16);
   }
   if (scene === "night") {
-    params.楂樺厜 -= 12;
-    params.鏆楄 += 8;
+    params.\u9AD8\u5149 -= 12;
+    params.\u6697\u89D2 += 8;
   }
 
   const scale = strength / 100;
@@ -316,7 +316,7 @@ function rankRecipes(stats, forcedScene, forcedStyle) {
 
 function copyRecipe(recipe) {
   const lines = [
-    `閱掑浘璋冭壊鍙傛暟锝?{recipe.name}`,
+    `\u9192\u56FE\u8C03\u8272\u53C2\u6570\uFF5C${recipe.name}`,
     recipe.note,
     ...Object.entries(recipe.params).map(([name, value]) => `${name} ${formatValue(value)}`),
   ];
@@ -344,12 +344,12 @@ function drawTonedImage(canvas, img, recipe, width = 1080, height = 1440) {
   canvas.width = width;
   canvas.height = height;
   const p = recipe.params;
-  const brightness = 1 + (p.浜害 || 0) / 120;
-  const contrast = 1 + (p.瀵规瘮搴?|| 0) / 120;
-  const saturate = 1 + (p.楗卞拰搴?|| 0) / 110;
-  const warmth = p.鑹叉俯 || 0;
+  const brightness = 1 + (p.\u4EAE\u5EA6 || 0) / 120;
+  const contrast = 1 + (p.\u5BF9\u6BD4\u5EA6 || 0) / 120;
+  const saturate = 1 + (p.\u9971\u548C\u5EA6 || 0) / 110;
+  const warmth = p.\u8272\u6E29 || 0;
   const sepia = Math.max(0, warmth) / 180;
-  const hue = (p.鑹茶皟 || 0) * 0.8 - Math.min(0, warmth) * 0.5;
+  const hue = (p.\u8272\u8C03 || 0) * 0.8 - Math.min(0, warmth) * 0.5;
 
   const afterCtx = canvas.getContext("2d");
   afterCtx.clearRect(0, 0, width, height);
@@ -357,14 +357,14 @@ function drawTonedImage(canvas, img, recipe, width = 1080, height = 1440) {
   drawCanvasCover(afterCtx, img, width, height);
   afterCtx.filter = "none";
 
-  if ((p.瑜壊 || 0) > 0) {
-    afterCtx.fillStyle = `rgba(232, 214, 184, ${Math.min(0.18, p.瑜壊 / 180)})`;
+  if ((p.\u892A\u8272 || 0) > 0) {
+    afterCtx.fillStyle = `rgba(232, 214, 184, ${Math.min(0.18, p.\u892A\u8272 / 180)})`;
     afterCtx.fillRect(0, 0, width, height);
   }
-  if ((p.鏆楄 || 0) > 0) {
+  if ((p.\u6697\u89D2 || 0) > 0) {
     const vignette = afterCtx.createRadialGradient(width / 2, height / 2, height * 0.2, width / 2, height / 2, height * 0.72);
     vignette.addColorStop(0, "rgba(0,0,0,0)");
-    vignette.addColorStop(1, `rgba(0,0,0,${Math.min(0.36, p.鏆楄 / 90)})`);
+    vignette.addColorStop(1, `rgba(0,0,0,${Math.min(0.36, p.\u6697\u89D2 / 90)})`);
     afterCtx.fillStyle = vignette;
     afterCtx.fillRect(0, 0, width, height);
   }
@@ -414,13 +414,13 @@ function drawStyleSamples(recipes) {
 }
 
 function updateSearchLinks(tags, recipe) {
-  const query = `${recipe.name} 閱掑浘 璋冭壊 鍙傛暟 濂界湅 濂借瘎`;
+  const query = `${recipe.name} \u9192\u56FE \u8C03\u8272 \u53C2\u6570 \u597D\u770B \u597D\u8BC4`;
   const encoded = encodeURIComponent(query);
   searchXhs.href = `https://www.xiaohongshu.com/search_result?keyword=${encoded}`;
   searchDouyin.href = `https://www.douyin.com/search/${encoded}?type=general`;
   searchWeb.href = `https://www.bing.com/search?q=${encodeURIComponent(`${query} site:xiaohongshu.com OR site:douyin.com`)}`;
   [searchXhs, searchDouyin, searchWeb].forEach((link) => {
-    link.title = `鑱旂綉鎼滅储锛?{query}`;
+    link.title = `\u8054\u7F51\u641C\u7D22\uFF1A${query}`;
   });
 }
 
@@ -438,8 +438,8 @@ function renderRecipe(recipe, index) {
   const button = node.querySelector("button");
   button.addEventListener("click", () => {
     copyRecipe(recipe);
-    button.textContent = "宸插鍒?;
-    setTimeout(() => (button.textContent = "澶嶅埗"), 1200);
+    button.textContent = "\u5DF2\u590D\u5236";
+    setTimeout(() => (button.textContent = "\u590D\u5236"), 1200);
   });
   return node;
 }
@@ -453,7 +453,7 @@ function updateResults() {
   const recipes = ranked.slice(0, 3).map((key) => adjustedRecipe(key, currentStats, strength, scene));
   const allRecipes = Object.keys(baseRecipes).map((key) => adjustedRecipe(key, currentStats, strength, scene));
 
-  resultTitle.textContent = `鎺ㄨ崘锛?{recipes[0].name}`;
+  resultTitle.textContent = `\u63A8\u8350\uFF1A${recipes[0].name}`;
   analysisCards.children[0].querySelector("span").textContent = currentStats.labels.brightness;
   analysisCards.children[1].querySelector("span").textContent = currentStats.labels.warmth;
   analysisCards.children[2].querySelector("span").textContent = currentStats.labels.saturation;
@@ -504,7 +504,7 @@ resetBtn.addEventListener("click", () => {
   sampleGrid.replaceChildren();
   dropzone.classList.remove("hidden");
   sampleBtn.classList.remove("hidden");
-  resultTitle.textContent = "鍏堜笂浼犵収鐗?;
+  resultTitle.textContent = "\u5148\u4E0A\u4F20\u7167\u7247";
   recipeList.replaceChildren();
   searchTags.replaceChildren();
   [...analysisCards.querySelectorAll("span")].forEach((span) => (span.textContent = "-"));
