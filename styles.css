@@ -1,0 +1,434 @@
+:root {
+  color-scheme: dark;
+  --bg: #111111;
+  --panel: #1b1b1b;
+  --panel-soft: #222222;
+  --line: #363636;
+  --text: #f4f1ea;
+  --muted: #aaa39a;
+  --accent: #ffd36a;
+  --accent-2: #81d8d0;
+  --danger: #ff6e94;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+.app {
+  width: min(1180px, calc(100vw - 28px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: minmax(360px, 0.92fr) minmax(420px, 1.08fr);
+  gap: 18px;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.topbar,
+.sectionTitle,
+.recipeHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: var(--accent-2);
+  font-size: 13px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.ghost,
+.recipe button,
+.sampleBtn {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel-soft);
+  color: var(--text);
+  padding: 9px 13px;
+  cursor: pointer;
+}
+
+.sampleBtn {
+  min-height: 44px;
+  border-color: #514a3c;
+  color: var(--accent);
+}
+
+.recipe button {
+  min-width: 72px;
+  background: var(--accent);
+  color: #18130a;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.dropzone {
+  min-height: 320px;
+  border: 1px dashed #595650;
+  border-radius: 8px;
+  background: #151515;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 9px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.dropzone input {
+  display: none;
+}
+
+.uploadIcon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #141414;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.dropzone small,
+.recipe p,
+.searchBox p,
+.imageInfo {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.previewWrap {
+  display: grid;
+  gap: 12px;
+}
+
+canvas {
+  width: 100%;
+  max-height: 58vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #080808;
+  border: 1px solid var(--line);
+}
+
+.hidden {
+  display: none;
+}
+
+.resultPreview.hidden {
+  display: none;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.controls label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+select,
+input[type="range"] {
+  width: 100%;
+}
+
+select {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0 10px;
+  background: #111111;
+  color: var(--text);
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+  margin-top: 10px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.analysisCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.analysisCards div {
+  min-height: 72px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-soft);
+}
+
+.analysisCards b {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.analysisCards span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.recipeList {
+  display: grid;
+  gap: 12px;
+}
+
+.resultPreview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.resultPreview figure {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.resultPreview canvas {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: none;
+}
+
+.resultPreview figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.styleSamples {
+  display: grid;
+  gap: 12px;
+}
+
+.styleSamples.hidden {
+  display: none;
+}
+
+.sampleTitle {
+  display: grid;
+  gap: 4px;
+}
+
+.sampleTitle p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.sampleGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.styleCard {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #151515;
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.styleCard.active {
+  border-color: var(--accent);
+}
+
+.styleCard canvas {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: none;
+}
+
+.styleCard strong {
+  font-size: 14px;
+}
+
+.styleCard span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.recipe {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #181818;
+  padding: 16px;
+}
+
+.params {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.param {
+  min-height: 54px;
+  border-radius: 7px;
+  background: var(--panel-soft);
+  padding: 9px 10px;
+}
+
+.param b {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.param span {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.searchBox {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  background: #151515;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.searchActions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.searchActions a {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  border: 1px solid #514a3c;
+  color: #18130a;
+  background: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+}
+
+.tag {
+  border-radius: 999px;
+  border: 1px solid #4a453b;
+  background: #23201a;
+  color: var(--accent);
+  padding: 7px 10px;
+  font-size: 13px;
+}
+
+@media (max-width: 920px) {
+  .app {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .sampleGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .app {
+    width: calc(100vw - 18px);
+    padding: 9px 0;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .controls,
+  .analysisCards,
+  .params,
+  .resultPreview,
+  .searchActions {
+    grid-template-columns: 1fr;
+  }
+
+  .sampleGrid {
+    grid-template-columns: 1fr;
+  }
+}
